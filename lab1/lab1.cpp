@@ -40,16 +40,27 @@ int main()
 
 int main(int argc, char* argv[])
 {
+	setlocale(LC_ALL, "ru");
+
 	string path = "error.txt";
 
-	if (argc <= 1)
+		
+	if (argc <= 1) 
 	{
 		ofstream fon;
-		//fon.open(path);
-		fon.open("error.txt");
-		fon << "Ошибка передачи аргуметов";
-		fon.close();
-		cout << "error"  << endl;
+		if (fon.open("error.txt"))
+		{
+			//fon.open(path);
+			fon << "Ошибка передачи аргуметов";
+			fon.close();
+			cout << "error" << endl;
+		}
+		else
+		{
+			cout << "ошибка открытия файла" << endl;
+
+		}
+
 	}
 	else
 	{
@@ -63,3 +74,4 @@ int main(int argc, char* argv[])
 	}
 
 }
+
