@@ -12,7 +12,7 @@ int main()
 	string path = "main.txt";
 
 	ifstream fin;
-	
+
 	fin.open(path);
 
 	if (!fin.is_open())
@@ -44,22 +44,17 @@ int main(int argc, char* argv[])
 
 	string path = "error.txt";
 
-		
-	if (argc <= 1) 
-	{
-		ofstream fon;
-		if (fon.open("error.txt"))
-		{
-			//fon.open(path);
-			fon << "Ошибка передачи аргуметов";
-			fon.close();
-			cout << "error" << endl;
-		}
-		else
-		{
-			cout << "ошибка открытия файла" << endl;
 
-		}
+	if (argc <= 1)
+	{
+
+
+		ofstream fon;
+		fon.open("error.txt");
+		//fon.open(path);
+		fon << "Ошибка передачи аргуметов";
+		fon.close();
+		cout << "error" << endl;
 
 	}
 	else
