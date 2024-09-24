@@ -2,9 +2,7 @@
 #include <string>
 #include <fstream>
 
-
 using namespace std;
-
 
 /*
 int main()
@@ -42,9 +40,26 @@ int main()
 
 int main(int argc, char* argv[])
 {
-	for (int i = 1; i < argc; i++)
+	string path = "error.txt";
+
+	if (argc <= 1)
 	{
-		cout << "Hello " << argv[i] << "!" << endl;
+		ofstream fon;
+		//fon.open(path);
+		fon.open("error.txt");
+		fon << "Ошибка передачи аргуметов";
+		fon.close();
+		cout << "error"  << endl;
 	}
-	return 0;
+	else
+	{
+		for (int i = 1; i < argc; i++)
+		{
+			cout << "Hello " << argv[i] << "!" << endl;
+		}
+		system("pause");
+
+		return 0;
+	}
+
 }
